@@ -24,5 +24,9 @@ function sendEmail() {
     from_email: getValue("email"),
     message:    getValue("message")
   }
-);
+  ).then(function(response) {
+    console.log("Email sent successfully!", response);
+  }, function(error) {
+    alert("Failed to send email: " + JSON.stringify(error));
+  });
 }
